@@ -30,10 +30,12 @@ minikube start --driver=docker &> /dev/null
 echo -e $GREEN"Minikube started"
 
 echo -e $WHITE
-minikube addons enable metrics-server
-minikube addons enable dashboard
-minikube addons enable metallb
+minikube addons enable metrics-server &> /dev/null
+minikube addons enable dashboard &> /dev/null
+minikube addons enable metallb &> /dev/null
 
-echo "Wordpress build"
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
 docker build ./Wordpress --tag wordpress:latest
-kubectl create deployment wordpress-depl --image=wordpress:latest --port=80
+kubectl create -f Wordpress/wordpress.yaml
+kubectl create -f Wordpress/wordpress-service.yaml
