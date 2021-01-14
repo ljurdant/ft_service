@@ -19,15 +19,8 @@ spec:
     spec:
       containers:
       - image: wordpress:latest
+        imagePullPolicy: Never
         name: wordpress
-        env:
-        - name: WORDPRESS_DB_HOST
-          value: mysql-service
-        - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password		
         ports:
         - containerPort: 80
           name: wordpress

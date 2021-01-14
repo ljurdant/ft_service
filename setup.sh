@@ -1,15 +1,16 @@
 minikube delete
 
-minikube start --memory=2200MB
+minikube start --memory=2200MB --driver=docker
 minikube addons enable metrics-server
 minikube addons enable dashboard
 minikube addons enable metallb
+eval $(minikube docker-env)
 kubectl delete configmap config -n metallb-system
 
 docker build ./wordpress/Docker --tag=wordpress:latest
 docker build ./nginx/Docker --tag=nginx:latest
 docker build ./mysql/Docker --tag=mysql:latest
-#docker build ./phpmyadmin/Docker --tag=phpmyadmin:latest
+docker build ./phpmyadmin/Docker --tag=phpmyadmin:latest
 
 kubectl create -f metallb/metallb.yaml
 kubectl create -f nginx/nginx-deployment.yaml
