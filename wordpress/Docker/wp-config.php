@@ -29,7 +29,7 @@ define( 'DB_USER', 'ljurdant' );
 define( 'DB_PASSWORD', 'yo' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'MYSQL_SERVICE_SERVICE_HOST:MYSQL_SERVICE_SERVICE_PORT' );
+define( 'DB_HOST', 'mysql-service' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
