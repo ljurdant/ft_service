@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-deployment
+  labels:
+    app: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: grafana
+        tier: frontend
+    spec:
+      containers:
+      - image: grafana:latest
+        imagePullPolicy: Never
+        name: grafama
+        ports:
+        - containerPort: 3000
+          name: grafana

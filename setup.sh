@@ -14,6 +14,7 @@ docker build ./mysql/Docker --tag=mysql:latest
 docker build ./phpmyadmin/Docker --tag=phpmyadmin:latest
 docker build ./ftps/Docker --tag=ftps:latest
 docker build ./influxdb/Docker --tag=influxdb:latest
+docker build ./grafana/Docker --tag=grafana:latest
 
 kubectl create -f metallb/metallb.yaml
 kubectl create -f nginx/nginx-deployment.yaml
@@ -31,3 +32,5 @@ kubectl create -f ftps/ftps-service.yaml
 kubectl create -f influxdb/influxdb-volume.yaml
 kubectl create -f influxdb/influxdb-deployment.yaml
 kubectl create -f influxdb/influxdb-service.yaml
+kubectl create -f grafana/grafana-deployment.yaml
+kubectl create -f grafana/grafana-service.yaml
