@@ -22,4 +22,5 @@ ADD telegraf.conf /etc/telegraf
 
 EXPOSE 3000
 
+##CMD /telegraf-1.17.2/usr/bin/telegraf &&
 CMD /grafana/bin/grafana-server --homepath=/grafana

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegraf-service
+  annotations:
+    metallb.universe.tf/allow-shared-ip: sharing key
+spec:
+  selector:
+    app: telegraf
+  ports:
+    - name: telegraf
+      protocol: TCP
+      port: 8125
+      targetPort: 8125
+  type: ClusterIP
+  loadBalancerIP: 192.168.49.240
+
