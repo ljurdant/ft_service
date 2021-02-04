@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: telegraf-deployment
+  name: telegraf-deployment
 spec:
     selector:
         matchLabels:
@@ -13,8 +13,11 @@ spec:
                 app: telegraf
         spec:
             containers:
-                - image: telegraf:1.10.0
+                - image: telegraf:latest
                   name: telegraf
+                  envFrom:
+                  - secretRef:
+                      name: telegraf-secret
                   ports:
                   - containerPort: 8125 
                   volumeMounts:

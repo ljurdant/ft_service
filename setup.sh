@@ -15,11 +15,11 @@ docker build ./phpmyadmin/Docker --tag=phpmyadmin:latest
 docker build ./ftps/Docker --tag=ftps:latest
 docker build ./influxdb/Docker --tag=influxdb:latest
 docker build ./grafana/Docker --tag=grafana:latest
+docker build ./telegraf/Docker --tag=telegraf:latest
 
 kubectl apply -f metallb/metallb.yaml
 kubectl apply -f nginx/nginx-deployment.yaml
 kubectl apply -f nginx/nginx-service.yaml
-kubectl apply -f mysql/mysql-secret.yaml
 kubectl apply -f mysql/mysql-pvc.yaml
 kubectl apply -f mysql/mysql-deployment.yaml
 kubectl apply -f mysql/mysql-service.yaml
@@ -34,6 +34,7 @@ kubectl apply -f influxdb/influxdb-deployment.yaml
 kubectl apply -f influxdb/influxdb-service.yaml
 kubectl apply -f grafana/grafana-deployment.yaml
 kubectl apply -f grafana/grafana-service.yaml
+kubectl apply -f telegraf/telegraf-secret.yaml
 kubectl apply -f telegraf/telegraf-config.yaml
 kubectl apply -f telegraf/telegraf-deployment.yaml
 kubectl apply -f telegraf/telegraf-service.yaml
