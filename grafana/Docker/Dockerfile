@@ -11,7 +11,9 @@ RUN mkdir =p /lib64\
 	&& cp /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 ADD defaults.ini /grafana/conf/defaults.ini
 COPY ./influxdb.yaml /grafana/conf/provisioning/datasources
+COPY ./dashboard.yaml /grafana/conf/provisioning/dashboards
 RUN chmod 777 /grafana/conf/provisioning/datasources/influxdb.yaml
+#RUN chmod 777 /grafana/conf/provisioning/dashboards/dashboard.yaml
 RUN rm /grafana/conf/provisioning/datasources/sample.yaml
 
 #Telegraf

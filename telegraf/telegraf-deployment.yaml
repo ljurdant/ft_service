@@ -22,7 +22,7 @@ spec:
                   - containerPort: 8125 
                   volumeMounts:
                       - name: telegraf-config
-                        mountPath: /etc/telegraf.conf
+                        mountPath: /etc/telegraf/telegraf.conf
                         subPath: telegraf.conf
                         readOnly: true
                       - name: docker-socket
