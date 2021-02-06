@@ -22,4 +22,4 @@ spec:
         name: wordpress
         ports:
         - containerPort: 5050
-          name: wordpress
+          name: wpport
