@@ -15,6 +15,7 @@ spec:
       labels:
         app: mysql
     spec:
+      restartPolicy: Always
       containers:
       - image: mysql:latest
         imagePullPolicy: Never
