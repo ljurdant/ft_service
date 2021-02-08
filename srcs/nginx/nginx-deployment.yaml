@@ -12,6 +12,7 @@ spec:
       labels:
         app: nginx
     spec:
+      restartPolicy: Always  
       containers:
       - name: nginx
         image: nginx:latest

@@ -16,6 +16,7 @@ spec:
         app: ftps
         tier: frontend
     spec:
+      restartPolicy: Always
       containers:
       - image: ftps:latest
         imagePullPolicy: Never

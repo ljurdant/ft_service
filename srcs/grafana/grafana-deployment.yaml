@@ -16,6 +16,7 @@ spec:
         app: grafana
         tier: frontend
     spec:
+      restartPolicy: Always  
       containers:
       - image: grafana:latest
         imagePullPolicy: Never
