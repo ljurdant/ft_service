@@ -17,7 +17,7 @@ spec:
         tier: frontend
     spec:
       restartPolicy: Always
-	  containers:
+      containers:
       - image: wordpress:latest
         imagePullPolicy: Never
         name: wordpress

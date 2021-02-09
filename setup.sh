@@ -1,6 +1,15 @@
+#!/bin/sh
+
 GREEN="\e[92m"
 BLUE="\e[94m"
 WHITE="\e[97m"
+
+if [ "$1" = "vm_setup" ];
+	then
+		echo -en $WHITE "Setting up VM..."
+		bash srcs/vm_setup.sh
+fi
+
 
 echo -en $WHITE
 echo "Starting minikube..."                            
