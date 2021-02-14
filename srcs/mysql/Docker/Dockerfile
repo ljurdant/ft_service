@@ -14,7 +14,7 @@ RUN mkdir -p /var/lib/mysql
 
 EXPOSE 3306
 
-COPY mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
+#COPY mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
 
 COPY init_db.sh ./
 
